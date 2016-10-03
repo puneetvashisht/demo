@@ -1,0 +1,76 @@
+<html>
+
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> 
+           
+    </head>
+<body>
+<div id="abc">
+</div> 
+
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>    
+<script type="text/jsx">
+
+ var Badge = React.createClass({
+     
+    incrementCount: function(){
+        console.log('Here I"ll add some behavior');
+        console.log(this.props.count);
+    }, 
+     
+    render: function(){
+        return (
+        <button onClick={this.incrementCount} className="btn btn-primary" type="button">
+           {this.props.text} <span className="badge">{this.props.count}</span>
+        </button>
+        )
+        
+    }
+})
+   
+    var Thumbnail = React.createClass({
+        render: function(){
+            return (
+                <div className="row">
+  <div className="col-sm-6 col-md-4">
+    <div className="thumbnail">
+      <img src="http://lorempixel.com/200/200/" alt="Image not found"/>
+      <div className="caption">
+        <h3>{this.props.title}</h3>
+        <p>{this.props.summary}</p>
+        <p>
+            <Badge text={this.props.txt} count={this.props.count}></Badge>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+            )
+        }
+    });
+
+    var option = {
+        title: "ReactJS",
+        summary: "ReactJS .. reactive JS library. Great with performance",
+        txt: "Sent",
+        count: 123
+    }
+
+    var obj = React.createElement(Thumbnail, option);
+    React.render(obj, document.getElementById('abc'))
+    
+
+
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>
