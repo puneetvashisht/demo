@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    
+    <body>
+        <h1>Demo for Brackets-- change</h1>
+         <button onclick="x()()">Click Event</button>
+    <script>
+        
+        function x(){
+  var count = 2;
+  console.log('x function')
+  var y = function(){
+   console.log('y function')
+   console.log(count + 2);
+   //var count = 0;  
+  }
+  return y;
+}
+    </script>    
+    </body>
+</html>
