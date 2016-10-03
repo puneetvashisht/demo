@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>First react</title>
+</head>
+<body>
+    <div id="mount-point"></div> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+    <script type="text/jsx">
+
+//1. Create a Reat class --- component 
+    var PrintTime = React.createClass({
+        render: function(){
+            var today = new Date();
+            
+            return (
+                <p>Hello, <input type="text" placeholder="Enter your name"/><br/>
+                    {today.getHours()} : {today.getMinutes()} : {today.getSeconds()}
+                </p>    
+            )
+        }
+        
+    });
+
+//2. Create an object of the component
+    var obj = React.createElement(PrintTime);
+
+
+//3. Render the object on the page
+
+    setInterval(function(){
+         React.render(obj, document.getElementById('mount-point'))
+    }, 1000)
+       
+    
+    </script>
+</body>
+</html>

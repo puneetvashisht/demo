@@ -1,0 +1,26 @@
+<html>
+<head>
+    
+</head>
+    
+    <body>
+        <div id="display"> </div>
+        
+        <script>
+            
+            setInterval(function(){
+                console.log('set interval...');
+                var today = new Date();
+                var str = '<p>Hello, <input type=text placeholder="Enter your name"/><br>' +  today.getHours() + " : " + today.getMinutes() + " : " + today.getSeconds();
+                document.getElementById('display').innerHTML = str;
+            }, 1000)
+            
+            
+            
+            
+            
+        </script>
+    </body>
+    
+    
+</html>
