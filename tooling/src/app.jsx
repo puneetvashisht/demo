@@ -1,4 +1,4 @@
-
+var ThumbnailList = require('./thumbnail-list')
 
     var option = {
         thumbnailData : [{

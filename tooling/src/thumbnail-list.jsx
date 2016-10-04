@@ -1,4 +1,6 @@
-var ThumbnailList = React.createClass({
+var Thumbnail = require('./thumbnail')
+
+module.exports = React.createClass({
  
     render: function(){
         

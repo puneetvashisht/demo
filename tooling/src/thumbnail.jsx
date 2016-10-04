@@ -1,4 +1,6 @@
-var Thumbnail = React.createClass({
+var Badge = require("./badge")
+
+var abc = React.createClass({
         render: function(){
             return (
                 <div className="row">

@@ -1,4 +1,4 @@
- var Badge = React.createClass({
+module.export = React.createClass({
      
     incrementCount: function(){
         console.log('Here I"ll add some behavior');
