@@ -11,15 +11,13 @@
 //1. Create a Reat class --- component 
     var PrintTime = React.createClass({
         render: function(){
-            var today = new Date();
-            
+            var today = new Date();            
             return (
                 <p>Hello, <input type="text" placeholder="Enter your name"/><br/>
                     {today.getHours()} : {today.getMinutes()} : {today.getSeconds()}
                 </p>    
             )
-        }
-        
+        }           
     });
 
 //2. Create an object of the component
