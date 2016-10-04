@@ -6,10 +6,10 @@ var watchify = require('watchify');
 var reactify = require('reactify');
 
 
-gulp.task('default', function() {
+gulp.task('abc', function() {
     var bundler = watchify(
         browserify({
-        entries: ['./source/app.jsx'],
+        entries: ['./src/app.jsx'],
         transform: [reactify],
         extensions: ['.jsx'],
         debug: true,
@@ -18,14 +18,13 @@ gulp.task('default', function() {
         fullPaths: true
         })
     );
-    
     function build(file) {
         if (file) gutil.log('Recompiling ' + file);
         return bundler
             .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-            .pipe(source('application.js'))
-            .pipe(gulp.dest('./js/'));
+            .pipe(source('main.js'))
+            .pipe(gulp.dest('./'));
     };
     build();
     bundler.on('update', build);
