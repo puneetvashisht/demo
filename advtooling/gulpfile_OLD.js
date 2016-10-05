@@ -18,6 +18,7 @@ gulp.task('abc', function() {
         fullPaths: true
         })
     );
+    
     function build(file) {
         if (file) gutil.log('Recompiling ' + file);
         return bundler
