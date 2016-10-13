@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+</head>
+<body>
+
+
+<div id="mount-point"></div>
+<script type="text/jsx">
+    /*  React.render(
+     React.DOM.h1(null, 'Hello, world!'),
+     document.getElementById('myDiv')
+     );
+     */
+    var CommentBox = React.createClass({
+
+        incrementCount: function(){
+            this.setState({
+                count: this.state.count + 1
+            });
+            this.props.name = "new value"
+        },
+       /* getInitialState: function(){
+            return {
+                count: 5
+            }
+        },*/
+
+        getInitialState: function(){
+            return {
+                count: 1,
+                anotherProp: this.props.name
+            }
+        },
+        render: function () {
+            return (
+
+                    <div>
+                        <div className="commentBox">
+                            Hello, world! {this.state.anotherProp} and the state is {this.state.count}.
+                            <button type="button" onClick={this.incrementCount}>Change State: Increment</button>
+                        </div>
+
+                    </div>
+
+    );
+        }
+    });
+
+    var option = {
+        name:'Change this to something.'
+    }
+    React.render(
+
+           /* <h1>Hello, world!</h1>,*/
+            <CommentBox name="Change this to something."/>,
+            document.getElementById('mount-point')
+    );
+</script>
+</body>
+</html>

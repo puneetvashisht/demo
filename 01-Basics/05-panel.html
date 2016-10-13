@@ -1,0 +1,70 @@
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+</div>
+</body>
+
+<script type="text/jsx">
+    var Badge = React.createClass({
+        render: function() {
+            return <button className="btn btn-primary" type="button">
+                {this.props.title} <span className="badge">{this.props.number}</span>
+            </button>
+        }
+    });
+
+
+    var Panel = React.createClass({
+        render: function(){
+            return(
+                    <div className="panel panel-default">
+                        <div className="panel-heading">
+
+                            <h3 className="panel-title">{this.props.header}</h3>
+                        </div>
+                        <div className="panel-body">
+                            <img src={this.props.imageUrl} alt="..."></img>
+                            <p>{this.props.description}</p>
+                            <p>
+                                <Badge title={this.props.title} number={this.props.number} />
+                            </p>
+                        </div>
+                    </div>
+            )
+        }
+    })
+
+    var Thumbnail = React.createClass({
+        render: function() {
+            return <div className="col-sm-6 col-md-4">
+                <div className="thumbnail">
+                    <img src={this.props.imageUrl} alt="..."></img>
+                    <div className="caption">
+                        <h3>{this.props.header}</h3>
+                        <p>{this.props.description}</p>
+                        <p>
+                            <Badge title={this.props.title} number={this.props.number} />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    });
+
+    var options = {
+        title: 'Show Courses',
+        number: 12,
+        header: 'Learn React',
+        description: 'React is a fantastic new front end library for rendering web pages. React is a fantastic new front end library for rendering web pages.',
+        imageUrl: '../images/download.jpg'
+    };
+
+    var element = React.createElement(Panel, options);
+    var element1 = React.createElement(Panel, options);
+    React.render(element, document.querySelector('.container'));
+    React.render(element1, document.querySelector('.container'));
+</script>

@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>LifeCycle Demo</title>
+</head>
+<body>
+   
+    <div id="my-app"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+    <script type="text/babel">
+        var Header = React.createClass({
+            render: function(){
+                return(
+                    <div>
+                        Welcome user
+                        <button>Login</button>
+                    </div>
+                )
+            }
+        })
+        
+        var MainSection = React.createClass({
+            getDefaultProps: function(){
+                console.log("1. getDefaultProps")
+                return { /* something here */};
+            },
+            getInitialState: function(){
+                console.log("2. getInitailState")
+                return {
+                    persons:[
+                        {name:"Mark", age: 31, address: "Tokiyo"},
+                        {name:"Ram", age: 34, address: "Delhi"},
+                        {name:"Miley", age: 24, address: "Melbourne"},
+                        {name:"Kitty", age: 27, address: "London"},
+                    ]
+                }
+            },
+            componentWillMount: function(){
+                console.log("3. componentWillMount... Get server call here for initial data...")
+            },
+            //only render function will run again (with state change)
+            render: function(){
+                console.log("4. render function");
+                return(
+                    <div>
+                        Main content here...
+                        <br/>
+                        <button onClick={this.changeState}>ChangeState</button>
+                    </div>
+                )
+            },
+            componentDidMount: function(){
+                console.log("5. componentDidMount")
+            },
+            
+            
+             changeState: function(){
+                var persons = this.state.persons;
+                persons[0].age++;
+                this.setState({persons: persons});
+//                 console.log(this.state.persons[0])
+            }
+        })
+        
+        var Footer = React.createClass({
+            render: function(){
+                return(
+                    <div>
+                        copyright @ react demo
+                    </div>
+                )
+            }
+        })
+        
+        var App = React.createClass({
+            render: function(){
+                return(
+                    <div>
+                        <Header /><hr/>
+                        <MainSection /><hr/>
+                        <Footer />                        
+                    </div>
+                );
+            }
+        })
+        
+        ReactDOM.render(<App />, document.getElementById('my-app'))
+    </script>
+</body>
+</html>

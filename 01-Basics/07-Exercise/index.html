@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./../build/react.js"></script>
+    <script>
+    function changeDOM(){
+        
+        var i = 0
+        var reactEl = React.createElement("p", {className: "panel-title"}, "Hello world " + i)
+        console.log(reactEl)
+        
+//        document.getElementById('domtest').innerHTML = reactEl
+        
+        React.render(reactEl, document.getElementById('domtest'))
+//        
+//        var elements = document.getElementById("domtest").children;
+//        for(key in elements){
+//            elements[key].innerHTML = "Comppletd"
+////            obj.innerHTML = "Completed"
+//        }
+    }
+    </script>
+</head>
+<body>
+    <div id="domtest">
+        <p>Test</p>
+        <p>Test2</p>
+    </div>
+    
+    <button onClick="changeDOM()">ChangeDOM</button>
+    
+    
+    <p className="h3">How did you hear about us?</p>
+
+					<p className="radio">
+						<label>
+							<input type="radio" name="referrer" value="newspaper"/>
+							Newspaper
+						</label>
+					</p>
+					<p className="radio">
+						<label>
+							<input type="radio" name="referrer" value="radio"/>
+							Radio
+						</label>
+					</p>
+					<p className="radio">
+						<label>
+							<input type="radio" name="referrer" value="tv"/>
+							Television
+						</label>
+					</p>
+					<p className="radio">
+						<label>
+							<input type="radio" name="referrer" value="search"/>
+							Search Engine
+						</label>
+					</p>
+					<p className="radio">
+						<label>
+							<input type="radio" name="referrer" value="social"/>
+							Social Media
+						</label>
+					</p>
+					<p className="form-group radio">
+						<label>
+							<input type="radio" name="referrer" value="other"/>
+							Other
+						</label>
+						<label className="form-inline">
+							Please specify:
+							<input type="text" name="referrer_other"/>
+						</label>
+					</p>
+</body>
+</html>

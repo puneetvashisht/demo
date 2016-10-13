@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+   <!-- <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>-->
+    
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/jsx">
+
+
+   var SomeComponent = React.createClass({
+           
+           render: function(){
+               var today = new Date();
+               return(
+               <p>Hello Worl</p>
+               )
+           }
+ 
+   });
+
+   var obj = React.createElement(SomeComponent);
+
+
+   setInterval(function(){
+        ReactDOM.render(obj, document.getElementById('example'));
+   }, 1000)
+  
+
+   /* var HelloWorld = React.createClass({
+        render: function() {
+            return (
+                    <p>
+                        Hello, <input type="text" placeholder="Your name here" />!
+                        It is {this.props.date.toTimeString()}
+                    </p>
+            );
+        }
+    });*/
+
+    /*setInterval(function() {
+        React.render(
+                <HelloWorld date={new Date()} />,
+                document.getElementById('example')
+        );
+    }, 500);*/
+
+
+
+</script>
+    
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+    
+    
+   /* setInterval(function(){
+        var today = new Date()
+        var myHTML = 
+        $("#example").html('<p>Hello, <input type=text placeholder="Enter your name"/> Today It is: </p>' + today.getDate() + " " + today.getMonth() + " " + today.getFullYear());
+        
+    }, 1000)
+    */
+//    setInterval(function() {
+//        var date = new Date()
+//        var dateStr =  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+//        document.getElementById('example').innerHTML =  '<p>Hello, <input type="text" placeholder="Your name here" />!It is  </p>' + dateStr
+//
+//
+//
+//    }, 500);
+</script>
+</body>
+</html>
